@@ -1,0 +1,21 @@
+/* Layout utama: sidebar + konten */
+.app-wrapper { display: flex; min-height: 100vh; background: #f4f6f9; }
+.main-content { flex: 1; min-width: 0; }
+
+/* Sidebar */
+.sidebar { width: 230px; background: #1e293b; color: #fff; flex-shrink: 0; transition: margin-left 0.3s; }
+.sidebar .nav-link { color: #cbd5e1; transition: background 0.2s; }
+.sidebar .nav-link:hover, .sidebar .nav-link.active { background: #334155; color: #fff; }
+
+/* Responsif: di layar kecil sidebar disembunyikan */
+@media (max-width: 767.98px) {
+  .sidebar { position: fixed; height: 100%; z-index: 1000; margin-left: -230px; }
+  .sidebar.open { margin-left: 0; }
+}
+/* Efek hover pada kartu ringkasan */
+.summary-card { transition: transform 0.2s, box-shadow 0.2s; }
+.summary-card:hover { transform: translateY(-4px); box-shadow: 0 .5rem 1rem rgba(0,0,0,.15) !important; }
+
+/* Transisi halus pada tombol */
+.btn { transition: transform 0.15s; }
+.btn:hover { transform: scale(1.05); }
